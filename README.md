@@ -26,7 +26,7 @@ This Node.js web application using EJS template engine which features OAuth 2.0 
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/Preetham-jayam/Learnify.git
+   git clone https://github.com/Srikar4510/Learnify.git
    cd Learnify
    ```
 
@@ -64,4 +64,4 @@ This Node.js web application using EJS template engine which features OAuth 2.0 
 
 ## Contact
 
-For any questions or feedback, feel free to reach out at preethamjayam2004@gmail.com.
+For any questions or feedback, feel free to reach out at srikar.a21@iiits.in.
