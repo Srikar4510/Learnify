@@ -1,67 +1,144 @@
-# Learnify
 
-## About the Project
+# Learnify Project
 
-This Node.js web application using EJS template engine which features OAuth 2.0 authentication for secure Google sign-ins. It includes role-based access control for "Creator" and "Student" roles, enabling Creators to upload and post videos while Students can view them. The app supports infinite threaded comments and utilizes AWS S3 and CDN for efficient media storage and delivery, employing Pre-Signed URLs for direct uploads.
+## Description
+Learnify is a web-based platform where users can create, share, and view video posts, comment on posts, like them, and interact with the community. This project is built using Node.js, Express, MongoDB, and several third-party services like AWS S3 for video and image uploads.
 
-## Features
-
-- **OAuth 2.0 Authentication**: Secure sign-in with Google accounts.
-- **Role-Based Access Control**: Distinguishes between "Creator" and "Student" roles.
-  - Creators can upload and post learning videos.
-  - Students can view posted videos.
-- **Threaded Comments**: Hierarchical data structure for infinite threaded comments on videos.
-- **AWS Integration**: 
-  - S3 bucket and CDN for efficient media storage and delivery.
-  - Pre-Signed URLs for direct uploads to S3, enhancing performance.
-
-## Tech Stack
-
-- **Backend**: Node.js, Express.js,EJS
-- **Database**: MongoDB
-- **Authentication**: OAuth 2.0 (Google)
-- **Cloud Services**: AWS S3, AWS CloudFront (CDN)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Environment Variables](#environment-variables)
+- [Technologies Used](#technologies-used)
+- [API Endpoints](#api-endpoints)
+- [License](#license)
 
 ## Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Srikar4510/Learnify.git
-   cd Learnify
-   ```
+### Prerequisites:
+1. Node.js (v14 or higher)
+2. MongoDB (Local or Atlas)
+3. AWS S3 setup for video and image uploads.
 
-2. **Install dependencies:**
+### Steps:
+1. Clone the repository:
    ```bash
-   cd Learnify
+   git clone https://github.com/Srikar4510/learnify.git
+   ```
+   
+2. Install dependencies:
+   ```bash
+   cd learnify
    npm install
    ```
 
-3. **Set up environment variables:**
-   - Create a `.env` file in the `Learnify` directory and add your variables (example below):
-     ```env
-      MONGO_URI=your_mongo_db_uri
-      GOOGLE_CLIENT_ID=your_google_client_id
-      GOOGLE_CLIENT_SECRET=your_google_client_secret
-      AWS_REGION=your_aws_region
-      AWS_ACCESS_KEY_ID=your_aws_access_key_id
-      AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
-      CLOUDFRONT_DDN=your_cloudfront_distribution_domain_name
-     ```
+3. Set up environment variables:
+   Create a file called `.env` in the root of your project and add the following:
+   ```
+   MONGO_URI=your-mongodb-uri
+   GOOGLE_CLIENT_ID=your-google-client-id
+   GOOGLE_CLIENT_SECRET=your-google-client-secret
+   AWS_REGION=your-aws-region
+   AWS_ACCESS_KEY_ID=your-aws-access-key
+   AWS_SECRET_ACCESS_KEY=your-aws-secret-access-key
+   CLOUDFRONT_DDN=your-cloudfront-distribution-url
+   ```
 
-4. **Run the application:**
+4. Run the application:
    ```bash
-   cd Learnify
    npm start
    ```
 
+   The application will run at [http://localhost:3000](http://localhost:3000).
+
 ## Usage
+### User Authentication
+- Users can log in using their Google account via OAuth2.
+- After logging in, users can create posts, like, and comment on other users' posts.
 
-1. **Sign in with Google** to access the application.
-2. **Creators** can upload and post learning videos.
-3. **Students** can view the posted videos.
-4. **Comment** on videos with threaded replies for organized discussions.
+### Posts
+- Users can create posts by uploading a video and setting a title, subtitle, and description.
 
+### Comments
+- Users can comment on posts, reply to comments, and engage in discussions.
+
+## Features
+- Google OAuth Authentication.
+- Video and image uploads using AWS S3.
+- Like and comment system for posts.
+- Role-based access control for creators and students.
+- search functionality for posts.
+- Profile settings, allowing users to change avatars and update details.
+
+## Environment Variables
+- **MONGO_URI**: MongoDB connection string.
+- **GOOGLE_CLIENT_ID**: Google OAuth client ID.
+- **GOOGLE_CLIENT_SECRET**: Google OAuth client secret.
+- **AWS_REGION**: AWS region for S3.
+- **AWS_ACCESS_KEY_ID**: AWS access key ID.
+- **AWS_SECRET_ACCESS_KEY**: AWS secret access key.
+- **CLOUDFRONT_DDN**: CloudFront distribution URL for serving uploaded assets.
+
+## Technologies Used
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- Passport.js (for authentication)
+- EJS (for templating)
+- AWS S3 (for media uploads)
+- Google OAuth 2.0 (for authentication)
+
+## API Endpoints
+### Authentication:
+- `GET /auth/google` - Initiates Google OAuth authentication.
+- `GET /auth/google/callback` - Google OAuth callback URL.
+- `GET /auth/logout` - Logs out the user.
+
+### Posts:
+- `POST /create/post` - Creates a new post.
+- `PATCH /post/like` - Likes a post.
+- `DELETE /post/delete` - Deletes a post.
+
+### Comments:
+- `POST /create/comment` - Adds a new comment to a post.
+- `GET /fetch/reply` - Fetches replies to a comment.
+
+## Screenshots
+
+### Login with Google Page
+<img src="./ScreenShots/loginPage.png" alt="Initial State" width="500"/>
+
+### Role selection page
+<img src="./ScreenShots/SignupPage.png" alt="Initial State" width="500"/>
+
+### Creator Dashboard
+<img src="./ScreenShots/dashboard.png" alt="Initial State" width="500"/>
+
+### Create Post Page
+<img src="./ScreenShots/Createpost1.png" alt="Initial State" width="500"/>
+<img src="./ScreenShots/Createpost2.png" alt="Initial State" width="500"/>
+
+### Post Page
+<img src="./ScreenShots/Post page.png" alt="Initial State" width="500"/>
+
+### Student Dashboard
+<img src="./ScreenShots/StudentDashboard.png" alt="Initial State" width="500"/>
+
+### Comments 
+<img src="./ScreenShots/Comments.png" alt="Initial State" width="500"/>
+
+## Contributing
+
+If you'd like to contribute to this project, feel free to submit a pull request or open an issue on the GitHub repository.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For any questions or feedback, feel free to reach out at srikar.a21@iiits.in.
+If you have any questions, feel free to reach out:
+
+- **Email**: [srikarambula.1924@gmail.com](mailto:srikarambula.1924@gmail.com)
+- **LinkedIn**: [Srikar Ambula](https://www.linkedin.com/in/srikar-ambula-66a647277/)
+- **GitHub**: [Srikar4510](https://github.com/Srikar4510)
