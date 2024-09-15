@@ -4,6 +4,7 @@ const router = express.Router();
 
 router.get(
   "/google",
+  // what information we need wrt to the user 
   passport.authenticate("google", {  
     scope: ["profile", "email"],
   })
@@ -15,6 +16,7 @@ router.get(
     failureRedirect: "/",
   }),
   (req, res) => {
+     //passport attaches user to the req 
     const user = req.user;
     if (user.role !== 0 || user.role !== 1) {
       return res.redirect("/signup");

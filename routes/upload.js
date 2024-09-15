@@ -23,7 +23,7 @@ router.get("/get/preSignedURL", async (req, res) => {
     contentType.split("/")[1];
 
   const command = new PutObjectCommand({
-    Bucket: "my-learnapp",
+    Bucket: "learnify-srikar",
     Key: fileName,
     ContentType: contentType,
   });

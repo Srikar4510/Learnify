@@ -1,4 +1,5 @@
 const ensureAuth = (req, res, next) => {
+    //passport attches isAuthenticated function 
   if (req.isAuthenticated()) {
     res.locals.user = req.user;
     return next();

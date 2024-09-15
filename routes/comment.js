@@ -26,6 +26,7 @@ router.post("/create/comment", ensureAuth, async (req, res) => {
 });
 
 router.get("/fetch/reply", ensureAuth, async (req, res) => {
+   //In case of get requerst we cant send data from frontend from body so we use query paramter
   const parentID = req.query.parentID;
   const parentDepth = Number(req.query.parentDepth);
 

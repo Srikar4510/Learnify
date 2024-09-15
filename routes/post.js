@@ -16,7 +16,8 @@ router.get(
   ensureSignUp,
   ensureCreator,
   (req, res) => {
-    res.render("create-post");
+
+ res.render("create-post");
   }
 );
 router.get(
