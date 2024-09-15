@@ -106,7 +106,7 @@ Learnify is a web-based platform where users can create, share, and view video p
 ## Screenshots
 
 ### Login with Google Page
-<img src="./ScreenShots/loginPage.png" alt="Initial State" width="500"/>
+<img src="./ScreenShots/loginpage.png" alt="Initial State" width="500"/>
 
 ### Role selection page
 <img src="./ScreenShots/SignupPage.png" alt="Initial State" width="500"/>
